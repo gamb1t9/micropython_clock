@@ -3,5 +3,5 @@ import network
 nic = network.WLAN(network.STA_IF)
 nic.active(True)
 nic.connect('WONDERLAND', 'Kiskutya9')
-sleep(3000)
+sleep(3)
 print(nic.ifconfig())
