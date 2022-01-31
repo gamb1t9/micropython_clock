@@ -1,6 +1,7 @@
 import time
 from machine import Pin
 import senko #ota
+import webrepl
 
 OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="test", files = ["boot.py", "main.py"])
     
@@ -17,9 +18,11 @@ def ota_fetch():
 ota_fetch()
 #just a comment
 led=Pin(2,Pin.OUT)
-for i in range(0,20):
+for i in range(0,10):
     led.value(1)
     time.sleep(0.3)
     led.value(0)
     time.sleep(0.3)
+print("successfull")
 
+webrepl.start()
