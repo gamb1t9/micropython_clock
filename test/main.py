@@ -15,7 +15,7 @@ def ota_fetch():
 
 
 ota_fetch()
-
+#just a comment
 led=Pin(2,Pin.OUT)
 for i in range(0,20):
     led.value(1)
