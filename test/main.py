@@ -15,6 +15,8 @@ def ota_fetch():
     if OTA.fetch():
         print("There are available updates on the DEVELOP branch")
         ota_pull()
+    else:
+        print("there are NO updates on dev!!!")
 
 
 ota_fetch()
