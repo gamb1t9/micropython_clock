@@ -10,7 +10,7 @@ def ota_pull():
         machine.reset()
 
 def ota_fetch():
-    if OTA.fetch()
+    if OTA.fetch():
         print("There are available updates on the master")
 
 
