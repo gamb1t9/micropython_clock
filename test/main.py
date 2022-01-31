@@ -1,8 +1,8 @@
 import time
-import machine
+from machine import Pin
 import senko #ota
 
-OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", working_dir="test", files = ["boot.py", "main.py"])
+OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="test", files = ["boot.py", "main.py"])
     
 def ota_pull():
     if OTA.update():
