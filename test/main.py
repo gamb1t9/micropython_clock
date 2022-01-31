@@ -1,5 +1,6 @@
 import time
 from machine import Pin
+import machine
 import senko #ota
 import webrepl
 
@@ -12,10 +13,12 @@ def ota_pull():
 
 def ota_fetch():
     if OTA.fetch():
-        print("There are available updates on the master")
+        print("There are available updates on the DEVELOP branch")
+        ota_pull()
 
 
 ota_fetch()
+
 #just a comment
 led=Pin(2,Pin.OUT)
 for i in range(0,10):
