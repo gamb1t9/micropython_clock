@@ -1,5 +1,5 @@
 # micropython_clock
-<press RAW cuz idk how to make it look like normal>
+!press RAW cuz idk how to make it look like normal!
 
 ESP32 with micropython
 WSL won't work due to the fact that it can't control USB
