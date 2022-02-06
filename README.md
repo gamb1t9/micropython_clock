@@ -16,12 +16,16 @@ useful commands:
 python stuff:
   ota:
     https://github.com/RangerDigital/senko
+    #use the above syntax cuz it's trickie. Don't forget to update if you added files to the working dir
+    #also working dir is a must!
+    OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", working_dir="main", files = ["boot.py", "main.py"])
   list stuff:
     import os
     os.listdir("your_directory_path_or_empty_for_root")
   reset board:
     import machine
     machine.reset()
+    
 
 misc:
   reset USB hub if ESP32 hangs (which it often does when you try something that should yield an error):
