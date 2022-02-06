@@ -21,6 +21,7 @@ def ota_fetch():
 
 ota_fetch()
 
+print("i'll flash for a couple of times just to amuse you")
 #just a comment
 led=Pin(2,Pin.OUT)
 for i in range(0,10):
@@ -28,9 +29,8 @@ for i in range(0,10):
     time.sleep(0.3)
     led.value(0)
     time.sleep(0.3)
-print("successfull")
 
 webrepl.start()
 #just another comment to see whats what
 #anadavan
-print("dissiz fun! I just have to push code to this branch and the thing will pull it!")
+print("READY")
