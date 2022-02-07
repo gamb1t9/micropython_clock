@@ -4,7 +4,7 @@ import machine
 import senko #ota
 import webrepl
 
-from /test/time.py import printtime
+from parts/time import printtime
 
 OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="main", files = ["boot.py", "main.py", "test/time.py"])
     
@@ -36,3 +36,4 @@ webrepl.start()
 #just another comment to see whats what
 #anadavan
 print("READY")
+printtime()
