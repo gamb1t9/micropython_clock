@@ -1,24 +1,10 @@
 import time
 from machine import Pin
 import machine
-import senko #ota
 import webrepl
 
 from parts/time import printtime
 
-OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="main", files = ["boot.py", "main.py", "test/time.py"])
-    
-def ota_pull():
-    if OTA.update():
-        print("Updated to the latest version! Rebooting...")
-        machine.reset()
-
-def ota_fetch():
-    if OTA.fetch():
-        print("There are available updates on the DEVELOP branch")
-        ota_pull()
-    else:
-        print("there are NO updates on dev!!!")
 
 
 ota_fetch()
