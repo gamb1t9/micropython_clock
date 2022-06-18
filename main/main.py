@@ -2,8 +2,10 @@ import time
 from machine import Pin
 import machine
 import webrepl
-
-from parts/time import printtime
+import sys
+import os
+sys.path.append(os.path.abspath("/parts"))
+from customtime import printtime
 
 
 
