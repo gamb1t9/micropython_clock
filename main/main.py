@@ -4,7 +4,7 @@ import machine
 import webrepl
 import sys
 import os
-sys.path.append(os.path.abspath("/parts"))
+sys.path.append("/parts")
 from customtime import printtime
 
 
