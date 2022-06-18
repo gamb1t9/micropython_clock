@@ -1,4 +1,5 @@
-# import ntptime
+import ntptime
+#ntptime is an mmpython builtin
 import time
 
 def printtime():
