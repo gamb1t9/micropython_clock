@@ -2,9 +2,10 @@ import network
 import time
 import senko #ota
 import machine
+import traceback
 
 OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"])
-    
+
 def ota_pull():
     gc.collect()
     if OTA.update():
@@ -33,10 +34,11 @@ for i in range(5):
     while True:
         try:
             if not nic.isconnected():
-                nic.connect(ssid, pw)            
+                nic.connect(ssid, pw)
             break
-        except OSError as e: #Wifi Internal Error
-            print("something went wrong:" + str(e) + "on try " + i+1 + ", but trying again")
+        except OSError: #Wifi Internal Error
+            traceback.print_exc()
+            print("Failed at try " + i + ", trying again...")
             time.sleep(2)
             continue
 
