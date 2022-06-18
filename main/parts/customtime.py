@@ -16,6 +16,6 @@ def printtime():
                 success = 0
             break
         except:
-            sleep(5)
+            time.sleep(5)
             continue
     print("Local time after synchronization：%s" %str(time.localtime()))
