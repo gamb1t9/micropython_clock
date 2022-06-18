@@ -19,3 +19,4 @@ def printtime():
             time.sleep(5)
             continue
     print("Local time after synchronization：%s" %str(time.localtime()))
+    #don't do this to me ota
