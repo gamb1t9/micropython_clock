@@ -7,6 +7,7 @@ tools required/suggested:
   ampy for listing, up- and downloading sketches
   esptool - for erasing and uploading firmware
   picocom - for serial terminal
+  webrepl - for OTA interactions: https://github.com/micropython/webrepl
 
 useful commands:
   picocom /dev/ttyUSB0 -b 115200
@@ -33,3 +34,5 @@ misc:
     dev = finddev(idVendor=0x10c4, idProduct=0xea60)
     dev.reset()
     #the pyusb module is required
+  these resets won't work all the time. Sometimes the board just decides to 'freeze' where NOTHING is working. This is usually after some serial interaction.
+  
