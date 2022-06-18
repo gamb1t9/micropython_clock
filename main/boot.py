@@ -6,11 +6,13 @@ import machine
 OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"])
     
 def ota_pull():
+    gc.collect()
     if OTA.update():
         print("Updated to the latest version! Rebooting...")
         machine.reset()
 
 def ota_fetch():
+    gc.collect()
     if OTA.fetch():
         print("There are available updates on the DEVELOP branch")
         ota_pull()

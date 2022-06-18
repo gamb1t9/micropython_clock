@@ -10,6 +10,7 @@ from customtime import printtime
 
 
 ota_fetch()
+gc.collect()
 
 print("i'll flash for a couple of times just to amuse you")
 #just a comment
