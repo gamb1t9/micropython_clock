@@ -19,18 +19,32 @@ def ota_fetch():
 
 
 
-# enable station interface and connect to WiFi access point
+# Wifi stuff
 ssid="WONDERLAND"
 pw="Kiskutya9"
 nic = network.WLAN(network.STA_IF)
 nic.active(True)
 nic.ifconfig(('192.168.0.250', '255.255.255.0', '192.168.0.1', '8.8.8.8'))
-nic.connect(ssid, pw)
-time.sleep(3)
-if not nic.isconnected():
-    while not nic.isconnected():
-            print("unable to connect, trying again in 3")
-            time.sleep(3)
-            nic.connect(ssid, pw)
-else:
-    print("connected. IPs: " +str(nic.ifconfig()))
+
+# retry if fails
+for i in range(5):
+    while True:
+        try:
+            if not nic.isconnected():
+                nic.connect(ssid, pw)            
+            break
+        except OSError as e: #Wifi Internal Error
+            print("something went wrong:" + e + "on try " + i+1 + ", but trying again")
+            time.sleep(2)
+            continue
+
+print("connected. IPs: " +str(nic.ifconfig()))
+
+# time.sleep(3)
+# if not nic.isconnected():
+#     while not nic.isconnected():
+#             print("unable to connect, trying again in 3")
+#             time.sleep(3)
+#             nic.connect(ssid, pw)
+# else:
+#     print("connected. IPs: " +str(nic.ifconfig()))
