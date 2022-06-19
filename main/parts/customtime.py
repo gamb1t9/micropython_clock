@@ -2,6 +2,7 @@ import ntptime
 #ntptime is an mmpython builtin
 import time
 
+actual_time=time.localtime()
 def printtime():
     print("Local time before synchronization：%s" %str(time.localtime()))
     
@@ -18,5 +19,6 @@ def printtime():
         except:
             time.sleep(5)
             continue
-    print("Local time after synchronization：%s" %str(time.localtime()))
-    #don't do this to me ota
+    #the dirty way: add 2 hours
+    actual_time=time.localtime()[3]+2
+    print("Local time after sync and modified timezone：%s" %str(time.localtime()))
