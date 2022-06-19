@@ -9,7 +9,7 @@ sys.path.append("/parts")
 try:
     from customtime import printtime
 except SyntaxError as e:
-    print sys.print_exception(e)
+    print(sys.print_exception(e))
     pass
 
 
