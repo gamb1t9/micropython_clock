@@ -20,6 +20,6 @@ def printtime():
             time.sleep(5)
             continue
     #the dirty way: add 2 hours
-    actual_time=time.localtime()[3]+2
+    actual_time=list(time.localtime())
+    actual_time[3] = actual_time[3] + 2
     print("Local time after sync and modified timezone：%s" %str(actual_time))
-#fricking ota man

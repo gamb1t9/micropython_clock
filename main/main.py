@@ -5,7 +5,12 @@ import webrepl
 import sys
 import os
 sys.path.append("/parts")
-from customtime import printtime
+
+try:
+    from customtime import printtime
+except SyntaxError as e:
+    print sys.print_exception(e)
+    pass
 
 
 
