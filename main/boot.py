@@ -2,6 +2,7 @@ import network
 import time
 import senko #ota
 import machine
+import ntptime
 
 OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"])
 

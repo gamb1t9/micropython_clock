@@ -1,12 +1,6 @@
-import ntptime
+#import ntptime if boot.py can import stuff 'globally', then import this there and see
 #ntptime is an mmpython builtin
 import time
-
-
-#testing cuz idk how can I call this from main without including the boot.py
-print("this is a test from customtime")
-ota_fetch()
-print("i guess it worked if no error")
 
 
 actual_time=time.localtime()
