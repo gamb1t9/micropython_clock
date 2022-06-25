@@ -7,10 +7,13 @@ from machine import Pin
 import webrepl
 import sys
 import os
+import gc
 
 branch = "develop"
+print(type(branch))
 
-OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch=%s, working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"] %branch)
+
+OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="%s" % branch, working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"] )
 
 def ota_pull():
     gc.collect()
@@ -21,7 +24,7 @@ def ota_pull():
 def ota_fetch():
     gc.collect()
     if OTA.fetch():
-        print("There are available updates on the %s branch" %branch)
+        print("There are available updates on the %s branch" % str(branch))
         ota_pull()
     else:
         print("there are NO updates on dev!!!")
