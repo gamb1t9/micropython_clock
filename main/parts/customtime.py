@@ -1,13 +1,6 @@
-#import ntptime if boot.py can import stuff 'globally', then import this there and see
-#ntptime is an mmpython builtin
-import time
-
-
+#imports happen a boot.py
 actual_time=time.localtime()
 def printtime():
-    print("Local time before synchronization：%s" %str(time.localtime()))
-    
-    time.sleep(3)
     # ntptime.settime(timezone=1,server = 'pool.ntp.org') 
     # TypeError: unexpected keyword argument 'timezone' all hail the docs
     success = 1

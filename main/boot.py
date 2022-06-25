@@ -2,9 +2,15 @@ import network
 import time
 import senko #ota
 import machine
-import ntptime
+import ntptime #mmpython builtin
+from machine import Pin
+import webrepl
+import sys
+import os
 
-OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch="develop", working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"])
+branch = "develop"
+
+OTA = senko.Senko(user="gamb1t9", repo="micropython_clock", branch=%s, working_dir="main", files = ["boot.py", "main.py", "parts/customtime.py"] %branch)
 
 def ota_pull():
     gc.collect()
@@ -15,7 +21,7 @@ def ota_pull():
 def ota_fetch():
     gc.collect()
     if OTA.fetch():
-        print("There are available updates on the DEVELOP branch")
+        print("There are available updates on the %s branch" %branch)
         ota_pull()
     else:
         print("there are NO updates on dev!!!")
