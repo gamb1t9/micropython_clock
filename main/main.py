@@ -8,6 +8,7 @@ sys.path.append("/parts")
 
 
 from customtime import printtime
+from boot import ota_fetch
 
 
 
