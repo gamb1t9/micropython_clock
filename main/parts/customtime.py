@@ -1,4 +1,5 @@
 #imports happen a boot.py
+import time
 actual_time=time.localtime()
 def printtime():
     # ntptime.settime(timezone=1,server = 'pool.ntp.org') 
