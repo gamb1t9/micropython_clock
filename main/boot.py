@@ -46,7 +46,7 @@ for i in range(5):
                 nic.connect(ssid, pw)
             break
         except OSError: #Wifi Internal Error
-            print("Failed at try " + i + ", trying again...")
+            print("Failed at try " + str(i) + ", trying again...")
             time.sleep(2)
             continue
 
